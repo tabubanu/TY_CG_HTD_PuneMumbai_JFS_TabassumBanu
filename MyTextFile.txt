@@ -1,0 +1,2 @@
+This is a Test Text File
+to move a file from staging area to a global repository we use commit
