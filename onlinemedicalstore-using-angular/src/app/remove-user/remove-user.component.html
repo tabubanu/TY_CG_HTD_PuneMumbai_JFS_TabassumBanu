@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Type</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users'>
+                <td>{{user.id}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.type}}</td>
+                <td>
+                    <button type="submit" class="btn btn-primary" (click)='deleteUser(user)'>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

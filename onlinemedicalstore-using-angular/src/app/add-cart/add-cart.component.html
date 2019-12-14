@@ -1,0 +1,18 @@
+<div class="col-md-4 offset-md-4 mt-5">
+        <form #addCartMedicine="ngForm" (ngSubmit)="submitForm(addCartMedicine)">
+            <div class="form-group">
+                <label for="userid">User ID:</label>
+                <input type="number" name="userid" class="form-control" #userid="ngModel" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="medicineid">Medicine Price:</label>
+                <input type="number" name="medicineid" class="form-control" #medicineid="ngModel" ngModel required>
+            </div>
+            <div class=" btn-group float-right">
+                <button type="reset" class="btn btn-outline-dark ">Reset</button>
+                <button type="submit" class="btn btn-outline-primary" [disabled]='addProduct.invalid'>
+                    Add To Cart
+                </button>
+            </div>
+        </form>
+    </div>

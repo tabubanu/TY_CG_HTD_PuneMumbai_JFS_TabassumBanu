@@ -1,0 +1,26 @@
+card{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-right: 400px;
+    padding: 20px;
+    color: black;
+    box-shadow: 0 0 30px rgb(34, 152,199);
+
+}
+label{
+   margin-left:80px ;
+   color:grey;
+
+}
+h4{
+    text-align: center;
+    color: rgb(31, 7, 170);
+}
+h6{
+    text-align: left;
+    color:greenyellow;
+}

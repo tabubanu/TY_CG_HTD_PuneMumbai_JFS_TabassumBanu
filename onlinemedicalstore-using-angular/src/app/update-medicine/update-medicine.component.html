@@ -1,0 +1,76 @@
+<div class="container mt-5">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Available</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let medicine of medicines'>
+                <td>{{medicine.productId}}</td>
+                <td>{{medicine.productName}}</td>
+                <td>{{medicine.price}}</td>
+                <td>{{medicine.category}}</td>
+                <td>{{medicine.available}}</td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#exampleModal" (click)="selectMedicine(medicine)">
+                        Update
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Medicine</h5>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        (click)='medicineService.getMedicine()' aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-4 offset-md-4 mt-5">
+                                        <form #updateProduct="ngForm" (ngSubmit)="submitForm(updateProduct)">
+                                            <div class="form-group">
+                                                <label for="productId">Product ID:</label>
+                                                <input type="number" name="productId" class="form-control"
+                                                    #productId="ngModel" [(ngModel)]="selectedMedicine.productId"
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="price">Product Price:</label>
+                                                <input type="number" name="price" class="form-control" #price="ngModel"
+                                                    [(ngModel)]="selectedMedicine.price" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="available">Product availability:</label>
+                                                <select name="available" class="form-control" #available="ngModel"
+                                                    [(ngModel)]="selectedMedicine.available" required>
+                                                    <option value="available">Available</option>
+                                                    <option value="absent">Unavailable</option>
+                                                </select>
+                                            </div>
+                                            <div class=" btn-group float-right">
+                                                <button type="reset" class="btn btn-outline-dark ">Reset</button>
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    Update
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

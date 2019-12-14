@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>ProductBrand</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Details</th>
+               <th>Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let medicine of medicines'>
+                <td>{{medicine.productId}}</td>
+                <td>{{medicine.productName}}</td>
+                <td>{{medicine.productBrand}}</td>
+                <td>{{medicine.category}}</td>
+                <td>{{medicine.price}}</td>
+               <td>{{medicine.details}}</td>
+                <td>{{medicine.available}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

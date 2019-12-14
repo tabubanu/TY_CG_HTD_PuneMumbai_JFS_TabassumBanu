@@ -1,0 +1,46 @@
+<div class="col-md-4 offset-md-4 mt-5">
+    <form #addProduct="ngForm" (ngSubmit)="submitForm(addProduct)">
+        <div class="form-group">
+            <label for="productId">Product ID:</label>
+            <input type="number" name="productId" class="form-control" #productId="ngModel" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="productName">product Name:</label>
+            <input type="text" name="productName" class="form-control" #productName="ngModel" ngModel required>
+        </div>
+        <div class="form-group">
+                <label for="productBrand">Product Brand: </label>
+                <input type="text" name="productBrand" class="form-control" #productBrand="ngModel" ngModel required>
+            </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" name="price" class="form-control" #price="ngModel" ngModel required>
+        </div>
+        <div class="form-group">
+                <label for="details">Details:</label>
+                <input type="text" name="details" class="form-control" #details="ngModel" ngModel required>
+            </div>
+        <div class="form-group">
+            <label for="category">Product Category :</label>
+            <select name="category" class="form-control" #category="ngModel" ngModel required>
+                <option value="Allopathy">Allopathy</option>
+                <option value="Hair&care">Hair&care</option>
+                <option value="Ayurvedic">Ayurvedic</option>
+                <option value="Eye Care">EyeCare</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="available">Product available :</label>
+            <select name="available" class="form-control" #available="ngModel" ngModel required>
+                <option value="available">Available</option>
+                <option value="absent">Unavailable</option>
+            </select>
+        </div>
+        <div class=" btn-group float-right">
+            <button type="reset" class="btn btn-outline-dark ">Reset</button>
+            <button type="submit" class="btn btn-outline-primary" [disabled]='addProduct.invalid'>
+                Add
+            </button>
+        </div>
+    </form>
+</div>
